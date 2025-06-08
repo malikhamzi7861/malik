@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Princess</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="stars"></div>
+  <div class="hearts"></div>
+
+  <div class="container">
+    <div class=" ">
+      <h1 class="glow">🎀 Happy Birthday PRETTY GIRL!🎉</h1>
+      <p class="message">
+        To the tiniest queen with the biggest smile,<br>
+        You make our world soft and worthwhile.<br>
+        May your days be cuddles, cake, and magic things,<br>
+        A fairy tale life with butterfly wings. 🦋🎂
+      </p>
+      <button onclick="revealWish()">🎁 Click for Secret Magic</<button type="button" name="" id="" class="btn btn-primary" btn-lg btn-block"></button>
+      <div id="surprise"></div>
+    </div>
+  </div>
+
+  <!-- 🎵 Add your birthday song here -->
+  <audio autoplay loop controls>
+    <source src="audio/birthday.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    function revealWish() {
+      document.getElementById("surprise").innerHTML = "🌸 You are a bundle of joy, a sparkle in our sky. Shine forever, little star! 🌸";
+    }
+
+    // Create floating hearts
+    const hearts = document.querySelector(".hearts");
+    for (let i = 0; i < 100; i++) {
+      let heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.style.left = `${Math.random() * 100}%`;
+      heart.style.animationDuration = `${3 + Math.random() * 4}s`;
+      hearts.appendChild(heart);
+    }
+
+    // Create floating stars
+    const stars = document.querySelector(".stars");
+    for (let i = 0; i < 30; i++) {
+      let star = document.createElement("div");
+      star.classList.add("star");
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.animationDuration = `${2 + Math.random() * 3}s`;
+      stars.appendChild(star);
+    }
+  </script>
+</body>
+</html>
